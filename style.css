@@ -1,0 +1,236 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: "cutive" monospace;
+    text-decoration: none;
+    color: aliceblue;
+    list-style: none;
+    /* esto es para que quede por defecto todo lo mencionado
+    se usa un asterisco para dejar como defecto, se saco las
+    decoraciones del texto y la de las listas */
+}
+
+body {
+    background-color: black;
+    /* para que la pantalla del body se ponga negro */
+}
+
+header {
+    position: fixed;
+    display: flex;
+    width: 100%;
+    /* para que ocupe el 100% del ancho de la pagina */
+    right: 0;
+    top: 0;
+    /* right y top es para que quede y empieze en 0 y 0 de la 
+    derecha y arriba */
+    z-index: 100;
+    /* el zindex era para que quede sobreposicionado al body, es decir que se note que esta arriba */
+    align-items: center;
+    /* este se usaba para centrar los items */
+    justify-content: space-between;
+    /* este se usaba para separar los contenidos entonces quedaba separado fran web de los otros ul (home etc.) */
+    margin-top: 20px;
+    /* para que se separe un poco de la parte de arriba */
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: 400;
+    margin-left: 30px;
+    /* para que se separe del margen de la izquierda */
+}
+
+.navlist {
+    display: flex;
+    margin-right: 15px;
+    /* este se usa para desplazar mas a la derecha la barra entonces no queda pegada a la derecha  */
+}
+
+.navlist a {
+    margin-left: 50px;
+    font-size: 15px;
+    font-weight: 600;
+    border-bottom: 2px solid transparent;
+    transition: all .5s ease;
+    /* estos son los codigos de los botones dfe la barra de abajo, se usa despues el hover para 
+    que al pasar el mouse se active */
+}
+
+.navlist a:hover {
+    border-bottom: 2px solid white;
+    /* este es para activar la barrita de abajo de color blanca osea el botton */
+}
+
+#menuBar {
+    display: none;
+    font-size: 35px;
+    z-index: 101;
+    cursor: pointer;
+}
+
+#menu-toggle {
+    display: none;
+}
+
+#menu-icon-action {
+    display: none;
+}
+
+.hero {
+    height: 100%;
+    width: 100%;
+    min-height: 100vh;
+    /* min height seria lo minimo para que no se pierda lo que se puede ver */
+    background: linear-gradient(234.23deg, #0a0225, rgb(68, 22, 121) 25%, rgb(59, 68, 153) 50%, rgb(54, 34, 34) 75%, black 100%);
+    /* sirve para darle color al fondo */
+    position: relative;
+    /* nos permite usar top left rigth, etc */
+    display: grid;
+    /* para que se pueda dividir en columnas el grid */
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 2rem;
+    /* 2 rem seria para que haya espacio entre las 2 columnas */
+}
+
+.hero-img img {
+    width: 400px;
+    margin: 10% 0% 5% 25%;
+    height: auto;
+    transition: all .4s linear;
+    /* esto hace que la transicion sea lineal */
+}
+
+.hero-img :hover {
+    width: 450px;
+    opacity: 0.2;
+}
+
+.hero-text {
+    font-family: monospace;
+    font-size: 17px;
+    margin-bottom: 5px;
+    padding-left: 10px;
+    margin-left: 55px;
+}
+
+.h2 {
+    padding-bottom: 10px;
+}
+
+.primero {
+    line-height: 1, 9;
+    margin-bottom: 3px;
+}
+
+.segundo {
+    line-height: 1.9;
+    margin-bottom: 25px;
+}
+
+.hero-text a {
+    display: inline-block;
+    background-color: rgb(15, 30, 43);
+    border: #0a0225 1px transparent;
+    padding: 15px 30px;
+    line-height: 1.4;
+    font-size: 15px;
+    border-radius: 30px;
+    text-transform: uppercase;
+    transition: all .5s ease 0s;
+}
+
+.hero-text a:hover {
+    border: 1px solid rgb(120, 10, 223);
+    transform: translateX(20px);
+}
+
+.hero-text a.Portafolio {
+    border: 1px solid rgb(120, 10, 223);
+    margin-left: 20px;
+}
+
+.hero-text a i {
+    margin-right: 5px;
+}
+
+.icons {
+    position: absolute;
+    top: 50vh;
+    transform: translateY(-180px);
+}
+
+.icons i {
+    display: block;
+    margin-top: 30px;
+    font-size: 35px;
+    transition: all .5s ease;
+}
+
+.icons i:hover {
+    background-color: rgb(25, 32, 32);
+    transform: translateY(-6px);
+}
+.flechita i{
+position: absolute;
+bottom: 5%;
+right: 3%;
+font-size: 40px;
+border-radius: 30px;
+transition: all .5s ease;
+background-color: #0a0225;
+}
+.flechita i:hover{
+border-radius: 30px;
+transform: translateY(-8px);
+border: 1px solid rgb(120, 10, 223);
+}
+/* aca vamos a hacer media, para que se vea bien tanto en compu celu  */
+@media(max-width:992px){
+.section{
+    padding: 0 3%;
+    transition: .2s;
+}
+.icons{
+    display: none;
+}
+.hero-img{
+    text-align: center;
+}
+.hero-img img{
+    width: 300px;
+}
+
+.hero-text{
+    padding-top: 0%;
+}
+.flechita{
+    display: none;
+}
+}
+@media (max-width:768px){
+.navlist{
+    display: none;
+}
+#menu-icon-action{
+    display: block;
+}
+#menu-icon{
+    display: block;
+}
+.hero-img{
+    margin: 0%;
+}
+.hero-img img{
+    margin: 0%;
+}
+.hero-text{
+    align-items: center;
+    padding-top: 100px;
+}
+.hero{
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+}
